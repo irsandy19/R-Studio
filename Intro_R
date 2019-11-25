@@ -1,0 +1,100 @@
+#Simple arithmatic function
+1 + 2
+9 * 6
+
+
+#Make a new object
+P <- 6
+P
+Q =  9/3  #You can use "=" instead of "<-"
+Q
+R = "Hello World"
+R
+
+
+#simple conditional functions
+x = 2
+if (x == 2) {print("x=2")}
+y = 2
+if (y >= 0) {print(y = "A")}
+  else {print(y = "B")}
+
+
+#simple looping function
+#for
+for (i in 1:4)          {print(i)}
+for (i in letters[1:4]) {print(i)}
+a = numeric(20)     #making an empty object with length 20
+  for (i in 1:20) {a[i] = i}; a
+
+#while
+j = 0
+while (j != 10) {
+  j = j + 1
+  print(j)
+}
+
+j = 1
+while (j < 100) {
+  print(j)
+  j = j*2
+}
+
+
+#understanding vector
+a = c(1, 5, 10)        ;a
+b = 2:5                ;b
+c = rep("a", 10)       ;c
+d = seq(1, 20, by = 3) ;d
+
+c(a,b)           #combining 2 objects
+c(1,1:5)    
+array(1, 3)      #making a vector with 3 elements
+array(8, c(2,3))  
+letters[1:10]    #vector alphabet
+LETTERS[10:20]
+
+K = c(1,2,3,2,1)
+length(K) #length data
+K[2]      #extracting 2nd element of object
+K[2:4]
+K[-3]
+
+
+#Understanding Matrice
+matrix(1:12, nrow = 3)            
+matrix(1:12, nrow = 3, byrow = T) #filling matrix by row
+matrix(2, nrow = 2, ncol = 2)
+matrix(1:12, 3, 4)        #simply, no need to type ncol and nrow
+
+
+#Combining vectors and/or matrices
+x = 1:5
+y = 4:8
+rbind(x,y)
+cbind(x,y)
+
+p = matrix(1:10, 2,5)
+dim(p) #dimension of matrice
+col(p)
+row(p)
+
+x1 = c(2,5)
+x2 = c(4,7)
+X  = cbind(x1, x2)
+
+t(X)     #transpose
+solve(X) #invers
+det(X)   #determinant matrice
+diag(X)  #diagonal matrice
+#Note: operation 2 matrices we can use operator like vector operator
+#for multiplication, use " %*% " instead of " * "
+
+
+#Subseting
+airquality #available in "datasets" package
+subset(airquality, Temp > 80) 
+subset(airquality, Temp > 80, select = c(Ozone, Temp))
+subset(airquality, Day == 1, select = -Temp)
+Newdata = subset(airquality, select = Ozone:Wind)
+colnames(Newdata) = c("X", "Y", "Z")
